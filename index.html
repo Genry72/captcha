@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Распознавания Капчи</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    
+    <div class="container">
+        <header class="glass-card fade-in-up">
+            <div class="header-content">
+                <h1>API для Распознавания Простых Капч</h1>
+                <p class="subtitle">Надежное и быстрое решение для автоматического распознавания текста на изображениях</p>
+                <div class="cta-header">
+                    <a href="https://t.me/your_bot_link" class="gradient-button" target="_blank">
+                        <span>Получить доступ</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section id="description" class="glass-card fade-in-up">
+            <h2>Как это работает?</h2>
+            <p class="description-text">Наш сервис предоставляет HTTP API для распознавания текста на изображениях, идеально подходящее для простых капч. Вы отправляете изображение, а в ответ получаете распознанный текст и его координаты.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    </div>
+                    <h3>Быстро</h3>
+                    <p>0.2 сек на капчу — до 5 в секунду</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>Надежно</h3>
+                    <p>Высокая точность распознавания</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h3>Просто</h3>
+                    <p>Легкая интеграция</p>
+                </div>
+            </div>
+
+            <div class="captcha-example">
+                <h3>Пример капчи:</h3>
+                <div class="captcha-image-wrapper">
+                    <img src="kapcha.png" alt="Пример капчи">
+                    <div class="captcha-overlay">
+                        <span class="captcha-result">kw9rN</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="api-usage" class="glass-card fade-in-up">
+            <h2>Использование API</h2>
+            
+            <div class="api-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Получите доступ к API</h3>
+                        <p>Свяжитесь с нашим Telegram-ботом для получения API ключа и полного URL для запросов</p>
+                        <a href="https://t.me/your_bot_link" class="gradient-button" target="_blank">
+                            <span>Получить доступ</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Пример запроса</h3>
+                        <p>Отправьте <strong>POST</strong> запрос на полный URL (полученный от бота) с вашим изображением и API токеном</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">bash</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                    <span>Копировать</span>
+                                </button>
+                            </div>
+                            <pre><code class="language-bash">curl -X POST 'YOUR_FULL_URL' \
+  -H 'vstoken: YOUR_API_TOKEN' \
+  -F 'file=@/path/to/your/captcha.png'</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Пример успешного ответа</h3>
+                        <p>В случае успешного распознавания, вы получите JSON-ответ со статусом 200</p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-label">json</span>
+                                <button class="copy-btn" onclick="copyCode(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                    <span>Копировать</span>
+                                </button>
+                            </div>
+                            <pre><code class="language-json">[
+  {
+    "bbox": [
+      [34, 16],
+      [143, 16],
+      [143, 52],
+      [34, 52]
+    ],
+    "text": "kw9rN",
+    "conf": 0.9985
+  }
+]</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="response-fields fade-in-up">
+                <h3>Описание полей ответа</h3>
+                <div class="fields-grid">
+                    <div class="field-item">
+                        <code class="field-code">bbox</code>
+                        <p class="field-description">Массив с координатами, определяющими рамку вокруг распознанного текста</p>
+                    </div>
+                    <div class="field-item">
+                        <code class="field-code">text</code>
+                        <p class="field-description">Распознанный текст</p>
+                    </div>
+                    <div class="field-item">
+                        <code class="field-code">conf</code>
+                        <p class="field-description">Уверенность модели в правильности распознавания (0-1)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="glass-card fade-in-up">
+            <p>&copy; 2026 Captcha Recognition API. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        function copyCode(btn) {
+            const codeBlock = btn.closest('.code-block').querySelector('code');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.querySelector('span').textContent;
+                btn.querySelector('span').textContent = 'Скопировано!';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    btn.querySelector('span').textContent = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
